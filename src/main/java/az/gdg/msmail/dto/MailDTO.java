@@ -1,4 +1,4 @@
-package az.gdg.msmail.entity;
+package az.gdg.msmail.dto;
 
 
 import lombok.AllArgsConstructor;
@@ -10,10 +10,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class EmailDetails {
+public class MailDTO {
 
-    private String emailTo;
-    private String emailSubject;
-    private String emailBody;
+    private String mailTo;
+    private String mailSubject;
+    private String mailBody;
 
 }

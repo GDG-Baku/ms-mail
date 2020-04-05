@@ -1,8 +1,8 @@
 spring:
   mail:
     host: smtp.gmail.com
-    username: xxx@gmail.com
-    password: xxx
+    username: alihsoff@gmail.com
+    password: A3l;/i?hs
     port: 587
     properties:
       mail:
@@ -23,5 +23,5 @@ spring:
     stream:
       bindings:
         input:
-          destination: mails
-          group: mails-groups
+          destination: mail
+          group: mail-group

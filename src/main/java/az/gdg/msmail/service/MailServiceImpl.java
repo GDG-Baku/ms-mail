@@ -1,7 +1,7 @@
 package az.gdg.msmail.service;
 
-import az.gdg.msmail.entity.EmailDetails;
-import lombok.RequiredArgsConstructor;
+import az.gdg.msmail.dto.MailDTO;
+import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -12,26 +12,26 @@ import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
 @Service
-@RequiredArgsConstructor
-public class EmailServiceImpl implements EmailService{
+@AllArgsConstructor
+public class MailServiceImpl implements MailService {
 
-    private static final Logger logger = LoggerFactory.getLogger(EmailServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(MailServiceImpl.class);
     private final JavaMailSender sender;
 
 
-    public void processEmailRequest(EmailDetails emailDetails){
-        logger.info("ActionLog.processEmailRequest.start");
+    public void processMailRequest(MailDTO mailDTO) {
+        logger.info("ActionLog.processMailRequest.start");
         MimeMessage message = sender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message, "utf-8");
         try {
-            helper.setTo(emailDetails.getEmailTo());
-            helper.setText(emailDetails.getEmailBody(),true);
-            helper.setSubject(emailDetails.getEmailSubject());
+            helper.setTo(mailDTO.getMailTo());
+            helper.setText(mailDTO.getMailBody(), true);
+            helper.setSubject(mailDTO.getMailSubject());
         } catch (MessagingException e) {
             e.printStackTrace();
         }
         sender.send(message);
-        logger.info("ActionLog.processEmailRequest.success");
+        logger.info("ActionLog.processMailRequest.end");
     }
 
 }
