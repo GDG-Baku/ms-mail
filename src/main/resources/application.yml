@@ -1,8 +1,8 @@
 spring:
   mail:
     host: smtp.gmail.com
-    username: alihsoff@gmail.com
-    password: A3l;/i?hs
+    username: xxx@gmail.com
+    password: xxx
     port: 587
     properties:
       mail:
@@ -15,10 +15,10 @@ spring:
           timeout: 5000
           writetimeout: 5000
   rabbitmq:
-    host: localhost
+    host: crow-01.rmq.cloudamqp.com
     port: 5672
-    username: guest
-    password: guest
+    username: sgehlykwa
+    password: 0ZZ9qz-7yx6pcUTwG6eEQaxBG1jXf5AX
   cloud:
     stream:
       bindings:
