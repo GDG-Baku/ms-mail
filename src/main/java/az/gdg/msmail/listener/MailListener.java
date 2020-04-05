@@ -18,8 +18,8 @@ public class MailListener {
 
     @StreamListener(Sink.INPUT)
     public void onNewMailRequest(MailDTO mailDTO) {
-        logger.debug("New mail {} request from queue start" + mailDTO.getMailTo());
+        logger.debug("New mail {} request from queue start", mailDTO.getMailTo());
         mailService.processMailRequest(mailDTO);
-        logger.debug("New mail {} request from queue end" + mailDTO.getMailTo());
+        logger.debug("New mail {} request from queue end", mailDTO.getMailTo());
     }
 }
