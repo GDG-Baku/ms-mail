@@ -15,7 +15,7 @@ spring:
           timeout: 5000
           writetimeout: 5000
   rabbitmq:
-    addresses: xxx
+    addresses: ${CLOUDAMQP_URL}
   cloud:
     stream:
       bindings:
