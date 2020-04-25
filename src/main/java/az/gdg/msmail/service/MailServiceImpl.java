@@ -27,9 +27,9 @@ public class MailServiceImpl implements MailService {
         MimeMessage message = sender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message, "utf-8");
         try {
-            helper.setText(mailDTO.getMailBody(), true);
-            helper.setSubject(mailDTO.getMailSubject());
-            InternetAddress[] recipients = InternetAddress.parse(MailUtil.listToString(mailDTO.getMailTo()));
+            helper.setText(mailDTO.getBody(), true);
+            helper.setSubject(mailDTO.getSubject());
+            InternetAddress[] recipients = InternetAddress.parse(MailUtil.listToString(mailDTO.getTo()));
             message.setRecipients(Message.RecipientType.TO, recipients);
         } catch (MessagingException e) {
             logger.error("ActionLog.MessagingException.Thrown", e);
