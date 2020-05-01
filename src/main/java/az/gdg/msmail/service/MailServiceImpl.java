@@ -2,7 +2,7 @@ package az.gdg.msmail.service;
 
 import az.gdg.msmail.dto.MailDTO;
 import az.gdg.msmail.util.MailUtil;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,13 +17,13 @@ import javax.mail.internet.MimeMessage;
 import java.io.UnsupportedEncodingException;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class MailServiceImpl implements MailService {
 
     private static final Logger logger = LoggerFactory.getLogger(MailServiceImpl.class);
     private final JavaMailSender sender;
     @Value("${spring.mail.username}")
-    private final String senderMail;
+    private String senderMail;
 
     public void processMailRequest(MailDTO mailDTO) {
         logger.info("ActionLog.processMailRequest.start");
