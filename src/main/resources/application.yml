@@ -21,4 +21,4 @@ spring:
       bindings:
         input:
           destination: mail
-          group: mail-gorup
+          group: mail-group
