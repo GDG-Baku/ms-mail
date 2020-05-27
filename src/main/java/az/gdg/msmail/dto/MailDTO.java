@@ -1,6 +1,5 @@
 package az.gdg.msmail.dto;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
