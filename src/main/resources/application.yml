@@ -1,0 +1,24 @@
+spring:
+  mail:
+    host: smtp.gmail.com
+    username: xxx@gmail.com
+    password: xxx
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          connectiontimeout: 5000
+          starttls:
+            enable: true
+            required: true
+          timeout: 5000
+          writetimeout: 5000
+  rabbitmq:
+    addresses: ${CLOUDAMQP_URL}
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: mail
+          group: mail-group
